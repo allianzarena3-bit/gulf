@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة الخليج للشحن - Gulf Shipping Company</title>
+    <title>شركة الخليج للشحن - Gulf Cargo Company</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap">
     <style>
         :root {
-            --primary: #2a5aa5;
-            --secondary: #f2a900;
-            --accent: #1e3a6e;
+            --primary: #1a3a6c;
+            --secondary: #d4af37;
+            --accent: #2a5aa5;
             --light: #f8f9fa;
             --dark: #333333;
             --success: #28a745;
@@ -32,8 +32,8 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            color: white;
+            background-color: white;
+            color: var(--dark);
             padding: 1rem 2rem;
             box-shadow: var(--shadow);
             position: sticky;
@@ -45,7 +45,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -63,6 +63,28 @@
         .logo h1 {
             font-size: 1.8rem;
             font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary);
+            background-color: rgba(212, 175, 55, 0.1);
         }
 
         .language-switcher {
@@ -71,9 +93,9 @@
         }
 
         .lang-btn {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
+            background: var(--light);
+            border: 1px solid #ddd;
+            color: var(--dark);
             padding: 8px 15px;
             border-radius: 20px;
             cursor: pointer;
@@ -82,45 +104,41 @@
         }
 
         .lang-btn:hover, .lang-btn.active {
-            background: var(--secondary);
-            color: var(--accent);
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+            background: var(--primary);
+            color: white;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(42, 90, 165, 0.9), rgba(30, 58, 110, 0.9)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(26, 58, 108, 0.85), rgba(42, 90, 165, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 4rem 2rem;
-            border-radius: 15px;
+            padding: 5rem 2rem;
             text-align: center;
             margin-bottom: 3rem;
-            box-shadow: var(--shadow);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
         }
 
         .cta-btn {
             background-color: var(--secondary);
-            color: var(--accent);
+            color: var(--primary);
             border: none;
             padding: 15px 40px;
             font-size: 1.2rem;
@@ -130,97 +148,140 @@
             transition: all 0.3s;
             display: inline-block;
             text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .cta-btn:hover {
             background-color: white;
             transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Coverage Section */
-        .coverage-section {
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Sections Common Styles */
+        .section {
             background-color: white;
             border-radius: 15px;
-            padding: 2rem;
+            padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow);
-        }
-
-        .coverage-section h2 {
-            color: var(--accent);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 10px;
-            display: inline-block;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .countries {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 1.5rem;
-        }
-
-        .country {
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            min-width: 200px;
-        }
-
-        .country i {
-            color: var(--secondary);
-            font-size: 1.3rem;
-        }
-
-        /* Services Section */
-        .services-section {
             margin-bottom: 3rem;
         }
 
-        .services-section h2 {
+        .section-title h2 {
             color: var(--accent);
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 10px;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
         }
 
+        .section-title p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Us Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            background-color: rgba(212, 175, 55, 0.15);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .feature-text h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         .service-card {
-            background-color: white;
             border-radius: 15px;
             padding: 2rem;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
             border-top: 5px solid var(--primary);
+            background-color: #f9f9f9;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
         }
 
         .service-icon {
@@ -231,33 +292,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
         }
 
         .service-icon i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary);
         }
 
-        .service-card h3 {
+        .service-header h3 {
             color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.6rem;
         }
 
         .service-card p {
-            line-height: 1.6;
+            line-height: 1.7;
             margin-bottom: 1.5rem;
             color: #555;
         }
 
         .service-features {
             list-style-type: none;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .service-features li {
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px dashed #eee;
             display: flex;
             align-items: center;
@@ -268,35 +327,197 @@
             margin-left: 10px;
         }
 
+        /* Coverage Section */
+        .coverage-description {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .country-item {
+            background: linear-gradient(to right, #f9f9f9, white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-right: 4px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .country-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .country-flag {
+            width: 50px;
+            height: 35px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .country-flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .country-name {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(to bottom right, var(--primary), var(--accent));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            background-color: rgba(255, 255, 255, 0.15);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-icon i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .contact-text h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .contact-text p {
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(42, 90, 165, 0.1);
+        }
+
         /* Footer */
         footer {
-            background-color: var(--accent);
+            background-color: var(--primary);
             color: white;
-            padding: 3rem 2rem;
+            padding: 3rem 2rem 1.5rem;
             margin-top: 3rem;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .footer-section h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: var(--secondary);
-            border-right: 3px solid var(--secondary);
-            padding-right: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
         }
 
         .footer-section p, .footer-section li {
             line-height: 1.8;
             margin-bottom: 10px;
+            opacity: 0.9;
         }
 
         .footer-section ul {
@@ -318,28 +539,59 @@
         }
 
         /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 gap: 15px;
             }
             
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
             .hero h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .countries {
-                flex-direction: column;
-                align-items: center;
+            .countries-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .country {
-                width: 100%;
-                max-width: 300px;
+            .section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
             }
         }
 
@@ -353,13 +605,6 @@
             font-family: 'Poppins', sans-serif;
         }
         
-        body[dir="ltr"] .footer-section h3 {
-            border-right: none;
-            border-left: 3px solid var(--secondary);
-            padding-right: 0;
-            padding-left: 10px;
-        }
-        
         body[dir="ltr"] .service-features li i {
             margin-left: 0;
             margin-right: 10px;
@@ -368,6 +613,15 @@
         body[dir="ltr"] .footer-section li i {
             margin-left: 0;
             margin-right: 10px;
+        }
+        
+        body[dir="ltr"] .contact-item {
+            flex-direction: row;
+        }
+        
+        body[dir="ltr"] .country-item {
+            border-right: none;
+            border-left: 4px solid var(--secondary);
         }
     </style>
 </head>
@@ -379,129 +633,180 @@
                 <h1>شركة الخليج للشحن</h1>
             </div>
             
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#coverage">نطاق التغطية</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
             <div class="language-switcher">
                 <button class="lang-btn active" onclick="switchLanguage('ar')">العربية</button>
                 <button class="lang-btn" onclick="switchLanguage('en')">English</button>
-                <button class="lang-btn" onclick="switchLanguage('zh')">中文</button>
+                <button class="lang-btn" onclick="switchLanguage('de')">Deutsch</button>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <h2 id="hero-title">شركة الخليج للشحن - حلول شحن متكاملة</h2>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 id="hero-title">شركة الخليج للشحن - رفيقك الموثوق في عالم الشحن</h2>
             <p id="hero-description">نقدم حلول شحن متكاملة وسريعة وآمنة عبر جميع الوسائل البحرية والجوية والبرية. نصل بشحناتكم إلى وجهاتكم المفضلة بكل سهولة وبتكلفة تنافسية.</p>
-            <a href="#quote" class="cta-btn" id="cta-button">احصل على عرض سعر</a>
-        </section>
+            <a href="#contact" class="cta-btn" id="cta-button">احصل على عرض سعر</a>
+        </div>
+    </section>
 
-        <section class="coverage-section">
+    <main class="container">
+        <!-- About Us Section -->
+        <section class="section" id="about">
             <div class="section-title">
-                <h2 id="coverage-title">نطاق التغطية</h2>
-                <p id="coverage-description">نوفر خدمات الشحن إلى دول الخليج والشرق الأوسط مع شبكة واسعة من الفروع والشركاء</p>
+                <h2 id="about-title">من نحن</h2>
+                <p id="about-subtitle">جودة، موثوقية، وتفانٍ في تقديم أفضل خدمات الشحن</p>
             </div>
             
-            <div class="countries">
-                <div class="country">
-                    <i class="fas fa-flag"></i>
-                    <span>الإمارات العربية المتحدة</span>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 id="about-heading">جودة، موثوقية، وتفانٍ في تقديم أفضل خدمات الشحن</h3>
+                    <p id="about-description1">نحن شركة الخليج للشحن، رائدون في مجال الخدمات اللوجستية والشحن منذ عام 2005. نقدم حلولاً متكاملة تلبي احتياجات عملائنا في مختلف القطاعات.</p>
+                    <p id="about-description2">نضع نصب أعيننا تقديم خدمات عالية الجودة تركز على الدقة والسرعة والأمان. نلتزم بمعايير الجودة العالمية ونستثمر في أحدث التقنيات لضمان رضا عملائنا.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4 id="feature1-title">خبرة 18+ سنة</h4>
+                                <p id="feature1-desc">خبرة واسعة في مجال الشحن واللوجستيات</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4 id="feature2-title">تغطية عالمية</h4>
+                                <p id="feature2-desc">شبكة واسعة من الشركاء في جميع أنحاء العالم</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4 id="feature3-title">شحن آمن</h4>
+                                <p id="feature3-desc">ضمان وصول الشحنات بسلامة وأمان تام</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4 id="feature4-title">دعم فني 24/7</h4>
+                                <p id="feature4-desc">فريق دعم فني متاح على مدار الساعة</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="country">
-                    <i class="fas fa-flag"></i>
-                    <span>قطر</span>
-                </div>
-                <div class="country">
-                    <i class="fas fa-flag"></i>
-                    <span>سلطنة عمان</span>
-                </div>
-                <div class="country">
-                    <i class="fas fa-flag"></i>
-                    <span>سوريا</span>
-                </div>
-                <div class="country">
-                    <i class="fas fa-flag"></i>
-                    <span>المملكة العربية السعودية</span>
-                </div>
-                <div class="country">
-                    <i class="fas fa-flag"></i>
-                    <span>الكويت</span>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1562887189-e5d078343de4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About Gulf Cargo Company">
                 </div>
             </div>
         </section>
-
-        <section class="services-section">
+        
+        <!-- Services Section -->
+        <section class="section" id="services">
             <div class="section-title">
-                <h2 id="services-title">خدماتنا المتكاملة</h2>
-                <p id="services-description">نقدم مجموعة شاملة من خدمات الشحن اللوجستية لدعم أعمالك</p>
+                <h2 id="services-title">خدماتنا</h2>
+                <p id="services-subtitle">نقدم مجموعة واسعة من خدمات الشحن اللوجستية المتكاملة</p>
             </div>
             
             <div class="services-grid">
-                <!-- Service 1: Customs Analysis -->
+                <!-- Service 1: Air Freight -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-clipboard-check"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3 id="service1-title">الشحن الجوي</h3>
                     </div>
-                    <h3 id="service1-title">التحليل الجمركي</h3>
-                    <p id="service1-desc">نقدم خدمات شاملة لتسهيل الإجراءات الجمركية وتخليص البضائع بسرعة وفعالية.</p>
+                    <p id="service1-desc">حلول سريعة للشحنات العاجلة لضمان الوصول في الوقت المحدد عبر شبكة عالمية من شركات الطيران الشريكة.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature1">تخليص جمركي سريع ودقيق</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature2">استشارات جمركية متخصصة</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature3">إعداد وتقديم المستندات المطلوبة</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature4">تخفيض التكاليف الجمركية</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature1">شحن عاجل في 24-48 ساعة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature2">تتبع لحظي للشحنات</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature3">شحنات درجة حرارة محكومة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service1-feature4">شحنات خطرة متخصصة (IMO)</span></li>
                     </ul>
                 </div>
                 
-                <!-- Service 2: Air Freight -->
+                <!-- Service 2: Sea Freight -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-plane"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h3 id="service2-title">الشحن البحري</h3>
                     </div>
-                    <h3 id="service2-title">الشحن الجوي</h3>
-                    <p id="service2-desc">حلول سريعة للشحنات العاجلة لضمان الوصول في الوقت المحدد عبر شبكة عالمية.</p>
+                    <p id="service2-desc">نقل الحاويات والبضائع بكافة أنواعها عبر الموانئ العالمية بتكلفة اقتصادية وأعلى معايير السلامة.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature1">شحن عاجل في 24-48 ساعة</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature2">تتبع لحظي للشحنات</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature3">شحنات درجة حرارة محكومة</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature4">شحنات خطرة متخصصة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature1">شحن حاويات كاملة (FCL)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature2">شحن أقل من حاوية (LCL)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature3">شحن بضائع مشروع كبيرة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service2-feature4">شحن سيارات ومعدات ثقيلة</span></li>
                     </ul>
                 </div>
                 
-                <!-- Service 3: Sea Freight -->
+                <!-- Service 3: Land Freight -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-ship"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 id="service3-title">الشحن البري</h3>
                     </div>
-                    <h3 id="service3-title">الشحن البحري</h3>
-                    <p id="service3-desc">نقل الحاويات والبضائع بكافة أنواعها عبر الموانئ العالمية بتكلفة اقتصادية.</p>
+                    <p id="service3-desc">أسطول شاحنات حديث للنقل البري للبضائع عبر الحدود بكفاءة وأمان مع أنظمة تتبع متطورة.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature1">شحن حاويات كاملة (FCL)</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature2">شحن أقل من حاوية (LCL)</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature3">شحن بضائع مشروع كبيرة</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature4">شحن سيارات ومعدات ثقيلة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature1">نقل بري سريع عبر الخليج</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature2">شحن مبرد للمواد الغذائية</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature3">تتبع مستمر عبر نظام GPS</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service3-feature4">تأمين شامل على البضائع</span></li>
                     </ul>
                 </div>
                 
-                <!-- Service 4: Land Freight -->
+                <!-- Service 4: Customs Clearance -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-truck"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 id="service4-title">التخليص الجمركي</h3>
                     </div>
-                    <h3 id="service4-title">الشحن البري</h3>
-                    <p id="service4-desc">أسطول شاحنات حديث للنقل البري للبضائع عبر الحدود بكفاءة وأمان.</p>
+                    <p id="service4-desc">تسهيل كافة الإجراءات الجمركية لضمان سرعة وسلاسة إتمام المعاملات وتخليص البضائع.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature1">نقل بري سريع عبر الخليج</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature2">شحن مبرد للمواد الغذائية</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature3">تتبع مستمر عبر نظام GPS</span></li>
-                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature4">تأمين شامل على البضائع</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature1">تخليص جمركي سريع ودقيق</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature2">استشارات جمركية متخصصة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature3">إعداد وتقديم المستندات</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span id="service4-feature4">تخفيض التكاليف الجمركية</span></li>
                     </ul>
                 </div>
                 
                 <!-- Service 5: Logistics -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-warehouse"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3 id="service5-title">خدمات لوجستية متكاملة</h3>
                     </div>
-                    <h3 id="service5-title">خدمات لوجستية متكاملة</h3>
-                    <p id="service5-desc">حلول تخزين وتوزيع متكاملة لإدارة سلسلة التوريد الخاصة بك.</p>
+                    <p id="service5-desc">حلول تخزين وتوزيع متكاملة لإدارة سلسلة التوريد الخاصة بك بأعلى معايير الجودة.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check-circle"></i> <span id="service5-feature1">تخزين آمن ومكيف</span></li>
                         <li><i class="fas fa-check-circle"></i> <span id="service5-feature2">إدارة المخزون والتوزيع</span></li>
@@ -512,17 +817,144 @@
                 
                 <!-- Service 6: Special Cargo -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-boxes"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3 id="service6-title">شحنات خاصة</h3>
                     </div>
-                    <h3 id="service6-title">شحنات خاصة</h3>
-                    <p id="service6-desc">حلول متخصصة للشحنات ذات المتطلبات الخاصة والقيود التنظيمية.</p>
+                    <p id="service6-desc">حلول متخصصة للشحنات ذات المتطلبات الخاصة والقيود التنظيمية مع فريق من الخبراء.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check-circle"></i> <span id="service6-feature1">شحنات فنية وحساسة</span></li>
                         <li><i class="fas fa-check-circle"></i> <span id="service6-feature2">شحن مواد خطرة (IMO)</span></li>
                         <li><i class="fas fa-check-circle"></i> <span id="service6-feature3">شحن مواد طبية وصيدلانية</span></li>
                         <li><i class="fas fa-check-circle"></i> <span id="service6-feature4">شحن مواد ثمينة ومجوهرات</span></li>
                     </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Coverage Section -->
+        <section class="section" id="coverage">
+            <div class="section-title">
+                <h2 id="coverage-title">نطاق التغطية</h2>
+                <p id="coverage-subtitle">نوفر خدمات الشحن إلى دول الخليج والشرق الأوسط مع شبكة واسعة من الفروع والشركاء</p>
+            </div>
+            
+            <p class="coverage-description" id="coverage-description">نصل بشحناتكم إلى وجهاتكم المفضلة في جميع أنحاء الخليج والشرق الأوسط بكل سهولة وموثوقية.</p>
+            
+            <div class="countries-grid">
+                <!-- Countries will be populated by JavaScript -->
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="section-title">
+                <h2 id="contact-title">اتصل بنا</h2>
+                <p id="contact-subtitle">نحن هنا لمساعدتك في جميع استفساراتك واحتياجاتك اللوجستية</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>معلومات الاتصال</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>العنوان</h4>
+                                <p id="address">حولي - شارع تونس - مجمع ناصر المربح - الدور 5 - مكتب 13</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>هاتف</h4>
+                                <p id="phone">22612300</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-fax"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>فاكس</h4>
+                                <p id="fax">51122285</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>واتساب</h4>
+                                <p id="whatsapp">66727775</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>البريد الإلكتروني</h4>
+                                <p id="email">info@gulfcargo.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">تابعنا</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <label for="name" id="form-name-label">الاسم الكامل</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" id="form-email-label">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" id="form-phone-label">رقم الهاتف</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" id="form-service-label">نوع الخدمة المطلوبة</label>
+                            <select id="service" class="form-control" required>
+                                <option value="" id="form-service-option-default">اختر الخدمة</option>
+                                <option value="air" id="form-service-option-air">الشحن الجوي</option>
+                                <option value="sea" id="form-service-option-sea">الشحن البحري</option>
+                                <option value="land" id="form-service-option-land">الشحن البري</option>
+                                <option value="customs" id="form-service-option-customs">التخليص الجمركي</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" id="form-message-label">رسالتك / تفاصيل الطلب</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-btn" style="width: 100%; padding: 15px; font-size: 1.1rem;" id="form-submit-btn">إرسال طلب عرض السعر</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -533,31 +965,32 @@
             <div class="footer-section">
                 <h3 id="footer-about-title">عن الشركة</h3>
                 <p id="footer-about-desc">شركة الخليج للشحن تقدم حلول شحن ولوجستية متكاملة منذ عام 2005، مع شبكة تغطية واسعة في دول الخليج والشرق الأوسط.</p>
-                <p><i class="fas fa-phone"></i> <span>+971 4 123 4567</span></p>
-                <p><i class="fas fa-envelope"></i> <span>info@gulf-shipping.com</span></p>
-                <p><i class="fas fa-map-marker-alt"></i> <span>دبي، الإمارات العربية المتحدة</span></p>
+                <p><i class="fas fa-phone"></i> <span>22612300 :هاتف</span></p>
+                <p><i class="fab fa-whatsapp"></i> <span>66727775 :واتساب</span></p>
+                <p><i class="fas fa-fax"></i> <span>51122285 :فاكس</span></p>
             </div>
             
             <div class="footer-section">
                 <h3 id="footer-services-title">خدمات سريعة</h3>
                 <ul>
-                    <li><i class="fas fa-chevron-left"></i> <span>الشحن الجوي العاجل</span></li>
-                    <li><i class="fas fa-chevron-left"></i> <span>الشحن البحري الاقتصادي</span></li>
-                    <li><i class="fas fa-chevron-left"></i> <span>النقل البري عبر الحدود</span></li>
-                    <li><i class="fas fa-chevron-left"></i> <span>الخدمات اللوجستية المتكاملة</span></li>
-                    <li><i class="fas fa-chevron-left"></i> <span>التخليص الجمركي</span></li>
+                    <li><i class="fas fa-chevron-left"></i> <span id="footer-service1">الشحن الجوي العاجل</span></li>
+                    <li><i class="fas fa-chevron-left"></i> <span id="footer-service2">الشحن البحري الاقتصادي</span></li>
+                    <li><i class="fas fa-chevron-left"></i> <span id="footer-service3">النقل البري عبر الحدود</span></li>
+                    <li><i class="fas fa-chevron-left"></i> <span id="footer-service4">التخليص الجمركي السريع</span></li>
+                    <li><i class="fas fa-chevron-left"></i> <span id="footer-service5">خدمات لوجستية متكاملة</span></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h3 id="footer-quote-title">طلب عرض سعر</h3>
-                <p id="footer-quote-desc">اطلب عرض سعر مجاني الآن لتجربة خدماتنا المتميزة. فريقنا مستعد للرد على استفساراتك خلال 24 ساعة.</p>
-                <a href="#quote" class="cta-btn" style="padding: 10px 25px; font-size: 1rem;">اطلب عرض سعر</a>
+                <h3 id="footer-location-title">موقعنا</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="footer-address">حولي - شارع تونس - مجمع ناصر المربح - الدور 5 - مكتب 13</span></p>
+                <p><i class="fas fa-clock"></i> <span id="footer-hours">ساعات العمل: 8:00 صباحاً - 6:00 مساءً (الأحد - الخميس)</span></p>
+                <p><i class="fas fa-envelope"></i> <span id="footer-email">info@gulfcargo.com</span></p>
             </div>
         </div>
         
         <div class="copyright">
-            <p id="copyright-text">© 2023 شركة الخليج للشحن. جميع الحقوق محفوظة.</p>
+            <p id="copyright-text">© 2023 شركة الخليج للشحن. جميع الحقوق محفوظة. | GULF CARGO COMPANY</p>
         </div>
     </footer>
 
@@ -565,118 +998,326 @@
         // Language content
         const content = {
             ar: {
-                dir: "rtl",
-                heroTitle: "شركة الخليج للشحن - حلول شحن متكاملة",
+                // Navigation
+                navHome: "الرئيسية",
+                navAbout: "من نحن",
+                navServices: "خدماتنا",
+                navCoverage: "نطاق التغطية",
+                navContact: "اتصل بنا",
+                
+                // Hero Section
+                heroTitle: "شركة الخليج للشحن - رفيقك الموثوق في عالم الشحن",
                 heroDescription: "نقدم حلول شحن متكاملة وسريعة وآمنة عبر جميع الوسائل البحرية والجوية والبرية. نصل بشحناتكم إلى وجهاتكم المفضلة بكل سهولة وبتكلفة تنافسية.",
                 ctaButton: "احصل على عرض سعر",
-                coverageTitle: "نطاق التغطية",
-                coverageDescription: "نوفر خدمات الشحن إلى دول الخليج والشرق الأوسط مع شبكة واسعة من الفروع والشركاء",
-                servicesTitle: "خدماتنا المتكاملة",
-                servicesDescription: "نقدم مجموعة شاملة من خدمات الشحن اللوجستية لدعم أعمالك",
-                service1Title: "التحليل الجمركي",
-                service1Desc: "نقدم خدمات شاملة لتسهيل الإجراءات الجمركية وتخليص البضائع بسرعة وفعالية.",
-                service1Features: ["تخليص جمركي سريع ودقيق", "استشارات جمركية متخصصة", "إعداد وتقديم المستندات المطلوبة", "تخفيض التكاليف الجمركية"],
-                service2Title: "الشحن الجوي",
-                service2Desc: "حلول سريعة للشحنات العاجلة لضمان الوصول في الوقت المحدد عبر شبكة عالمية.",
-                service2Features: ["شحن عاجل في 24-48 ساعة", "تتبع لحظي للشحنات", "شحنات درجة حرارة محكومة", "شحنات خطرة متخصصة"],
-                service3Title: "الشحن البحري",
-                service3Desc: "نقل الحاويات والبضائع بكافة أنواعها عبر الموانئ العالمية بتكلفة اقتصادية.",
-                service3Features: ["شحن حاويات كاملة (FCL)", "شحن أقل من حاوية (LCL)", "شحن بضائع مشروع كبيرة", "شحن سيارات ومعدات ثقيلة"],
-                service4Title: "الشحن البري",
-                service4Desc: "أسطول شاحنات حديث للنقل البري للبضائع عبر الحدود بكفاءة وأمان.",
-                service4Features: ["نقل بري سريع عبر الخليج", "شحن مبرد للمواد الغذائية", "تتبع مستمر عبر نظام GPS", "تأمين شامل على البضائع"],
+                
+                // About Section
+                aboutTitle: "من نحن",
+                aboutSubtitle: "جودة، موثوقية، وتفانٍ في تقديم أفضل خدمات الشحن",
+                aboutHeading: "جودة، موثوقية، وتفانٍ في تقديم أفضل خدمات الشحن",
+                aboutDescription1: "نحن شركة الخليج للشحن، رائدون في مجال الخدمات اللوجستية والشحن منذ عام 2005. نقدم حلولاً متكاملة تلبي احتياجات عملائنا في مختلف القطاعات.",
+                aboutDescription2: "نضع نصب أعيننا تقديم خدمات عالية الجودة تركز على الدقة والسرعة والأمان. نلتزم بمعايير الجودة العالمية ونستثمر في أحدث التقنيات لضمان رضا عملائنا.",
+                feature1Title: "خبرة 18+ سنة",
+                feature1Desc: "خبرة واسعة في مجال الشحن واللوجستيات",
+                feature2Title: "تغطية عالمية",
+                feature2Desc: "شبكة واسعة من الشركاء في جميع أنحاء العالم",
+                feature3Title: "شحن آمن",
+                feature3Desc: "ضمان وصول الشحنات بسلامة وأمان تام",
+                feature4Title: "دعم فني 24/7",
+                feature4Desc: "فريق دعم فني متاح على مدار الساعة",
+                
+                // Services Section
+                servicesTitle: "خدماتنا",
+                servicesSubtitle: "نقدم مجموعة واسعة من خدمات الشحن اللوجستية المتكاملة",
+                service1Title: "الشحن الجوي",
+                service1Desc: "حلول سريعة للشحنات العاجلة لضمان الوصول في الوقت المحدد عبر شبكة عالمية من شركات الطيران الشريكة.",
+                service1Features: ["شحن عاجل في 24-48 ساعة", "تتبع لحظي للشحنات", "شحنات درجة حرارة محكومة", "شحنات خطرة متخصصة (IMO)"],
+                service2Title: "الشحن البحري",
+                service2Desc: "نقل الحاويات والبضائع بكافة أنواعها عبر الموانئ العالمية بتكلفة اقتصادية وأعلى معايير السلامة.",
+                service2Features: ["شحن حاويات كاملة (FCL)", "شحن أقل من حاوية (LCL)", "شحن بضائع مشروع كبيرة", "شحن سيارات ومعدات ثقيلة"],
+                service3Title: "الشحن البري",
+                service3Desc: "أسطول شاحنات حديث للنقل البري للبضائع عبر الحدود بكفاءة وأمان مع أنظمة تتبع متطورة.",
+                service3Features: ["نقل بري سريع عبر الخليج", "شحن مبرد للمواد الغذائية", "تتبع مستمر عبر نظام GPS", "تأمين شامل على البضائع"],
+                service4Title: "التخليص الجمركي",
+                service4Desc: "تسهيل كافة الإجراءات الجمركية لضمان سرعة وسلاسة إتمام المعاملات وتخليص البضائع.",
+                service4Features: ["تخليص جمركي سريع ودقيق", "استشارات جمركية متخصصة", "إعداد وتقديم المستندات", "تخفيض التكاليف الجمركية"],
                 service5Title: "خدمات لوجستية متكاملة",
-                service5Desc: "حلول تخزين وتوزيع متكاملة لإدارة سلسلة التوريد الخاصة بك.",
+                service5Desc: "حلول تخزين وتوزيع متكاملة لإدارة سلسلة التوريد الخاصة بك بأعلى معايير الجودة.",
                 service5Features: ["تخزين آمن ومكيف", "إدارة المخزون والتوزيع", "تغليف وتعبئة محترفة", "نظام تتبع وإدارة ذكي"],
                 service6Title: "شحنات خاصة",
-                service6Desc: "حلول متخصصة للشحنات ذات المتطلبات الخاصة والقيود التنظيمية.",
+                service6Desc: "حلول متخصصة للشحنات ذات المتطلبات الخاصة والقيود التنظيمية مع فريق من الخبراء.",
                 service6Features: ["شحنات فنية وحساسة", "شحن مواد خطرة (IMO)", "شحن مواد طبية وصيدلانية", "شحن مواد ثمينة ومجوهرات"],
+                
+                // Coverage Section
+                coverageTitle: "نطاق التغطية",
+                coverageSubtitle: "نوفر خدمات الشحن إلى دول الخليج والشرق الأوسط مع شبكة واسعة من الفروع والشركاء",
+                coverageDescription: "نصل بشحناتكم إلى وجهاتكم المفضلة في جميع أنحاء الخليج والشرق الأوسط بكل سهولة وموثوقية.",
+                
+                // Contact Section
+                contactTitle: "اتصل بنا",
+                contactSubtitle: "نحن هنا لمساعدتك في جميع استفساراتك واحتياجاتك اللوجستية",
+                address: "حولي - شارع تونس - مجمع ناصر المربح - الدور 5 - مكتب 13",
+                phone: "22612300",
+                fax: "51122285",
+                whatsapp: "66727775",
+                email: "info@gulfcargo.com",
+                
+                // Form
+                formNameLabel: "الاسم الكامل",
+                formEmailLabel: "البريد الإلكتروني",
+                formPhoneLabel: "رقم الهاتف",
+                formServiceLabel: "نوع الخدمة المطلوبة",
+                formServiceOptionDefault: "اختر الخدمة",
+                formServiceOptionAir: "الشحن الجوي",
+                formServiceOptionSea: "الشحن البحري",
+                formServiceOptionLand: "الشحن البري",
+                formServiceOptionCustoms: "التخليص الجمركي",
+                formMessageLabel: "رسالتك / تفاصيل الطلب",
+                formSubmitBtn: "إرسال طلب عرض السعر",
+                
+                // Footer
                 footerAboutTitle: "عن الشركة",
                 footerAboutDesc: "شركة الخليج للشحن تقدم حلول شحن ولوجستية متكاملة منذ عام 2005، مع شبكة تغطية واسعة في دول الخليج والشرق الأوسط.",
                 footerServicesTitle: "خدمات سريعة",
-                footerQuoteTitle: "طلب عرض سعر",
-                footerQuoteDesc: "اطلب عرض سعر مجاني الآن لتجربة خدماتنا المتميزة. فريقنا مستعد للرد على استفساراتك خلال 24 ساعة.",
-                copyrightText: "© 2023 شركة الخليج للشحن. جميع الحقوق محفوظة."
+                footerService1: "الشحن الجوي العاجل",
+                footerService2: "الشحن البحري الاقتصادي",
+                footerService3: "النقل البري عبر الحدود",
+                footerService4: "التخليص الجمركي السريع",
+                footerService5: "خدمات لوجستية متكاملة",
+                footerLocationTitle: "موقعنا",
+                footerAddress: "حولي - شارع تونس - مجمع ناصر المربح - الدور 5 - مكتب 13",
+                footerHours: "ساعات العمل: 8:00 صباحاً - 6:00 مساءً (الأحد - الخميس)",
+                footerEmail: "info@gulfcargo.com",
+                copyrightText: "© 2023 شركة الخليج للشحن. جميع الحقوق محفوظة. | GULF CARGO COMPANY"
             },
             en: {
-                dir: "ltr",
-                heroTitle: "Gulf Shipping Company - Integrated Shipping Solutions",
+                // Navigation
+                navHome: "HOME",
+                navAbout: "ABOUT US",
+                navServices: "OUR SERVICES",
+                navCoverage: "COVERAGE",
+                navContact: "CONTACT",
+                
+                // Hero Section
+                heroTitle: "Gulf Cargo Company - Your Trusted Partner in Shipping",
                 heroDescription: "We provide integrated, fast and secure shipping solutions via all sea, air and land means. We deliver your shipments to your favorite destinations with ease and at competitive cost.",
                 ctaButton: "Get a Quote",
-                coverageTitle: "Coverage Area",
-                coverageDescription: "We provide shipping services to Gulf and Middle Eastern countries with a wide network of branches and partners.",
-                servicesTitle: "Our Integrated Services",
-                servicesDescription: "We offer a comprehensive range of logistics shipping services to support your business.",
-                service1Title: "Customs Analysis",
-                service1Desc: "We provide comprehensive services to facilitate customs procedures and clear goods quickly and effectively.",
-                service1Features: ["Fast and accurate customs clearance", "Specialized customs consultations", "Preparation and submission of required documents", "Reduction of customs costs"],
-                service2Title: "Air Freight",
-                service2Desc: "Fast solutions for urgent shipments to ensure arrival on time via a global network.",
-                service2Features: ["Urgent shipping in 24-48 hours", "Real-time shipment tracking", "Temperature-controlled shipments", "Specialized hazardous shipments"],
-                service3Title: "Sea Freight",
-                service3Desc: "Transport of containers and goods of all kinds through global ports at an economical cost.",
-                service3Features: ["Full container load (FCL)", "Less than container load (LCL)", "Large project cargo shipping", "Car and heavy equipment shipping"],
-                service4Title: "Land Freight",
-                service4Desc: "Modern truck fleet for cross-border land freight transport with efficiency and safety.",
-                service4Features: ["Fast land transport across the Gulf", "Refrigerated shipping for food materials", "Continuous tracking via GPS system", "Comprehensive cargo insurance"],
+                
+                // About Section
+                aboutTitle: "About Us",
+                aboutSubtitle: "Quality, Reliability, and Dedication in Providing the Best Shipping Services",
+                aboutHeading: "Quality, Reliability, and Dedication in Providing the Best Shipping Services",
+                aboutDescription1: "We are Gulf Cargo Company, pioneers in logistics and shipping services since 2005. We provide integrated solutions that meet the needs of our clients in various sectors.",
+                aboutDescription2: "We focus on providing high-quality services that emphasize accuracy, speed and safety. We adhere to global quality standards and invest in the latest technologies to ensure customer satisfaction.",
+                feature1Title: "18+ Years Experience",
+                feature1Desc: "Extensive experience in shipping and logistics",
+                feature2Title: "Global Coverage",
+                feature2Desc: "Wide network of partners around the world",
+                feature3Title: "Secure Shipping",
+                feature3Desc: "Guarantee of safe and secure delivery of shipments",
+                feature4Title: "24/7 Technical Support",
+                feature4Desc: "Technical support team available around the clock",
+                
+                // Services Section
+                servicesTitle: "Our Services",
+                servicesSubtitle: "We offer a wide range of integrated logistics shipping services",
+                service1Title: "Air Freight",
+                service1Desc: "Fast solutions for urgent shipments to ensure on-time delivery through a global network of partner airlines.",
+                service1Features: ["Urgent shipping in 24-48 hours", "Real-time shipment tracking", "Temperature-controlled shipments", "Specialized hazardous shipments (IMO)"],
+                service2Title: "Sea Freight",
+                service2Desc: "Transport of containers and goods of all kinds through global ports at economical cost and highest safety standards.",
+                service2Features: ["Full container load (FCL)", "Less than container load (LCL)", "Large project cargo shipping", "Car and heavy equipment shipping"],
+                service3Title: "Land Freight",
+                service3Desc: "Modern truck fleet for cross-border land freight transport with efficiency, safety and advanced tracking systems.",
+                service3Features: ["Fast land transport across the Gulf", "Refrigerated shipping for food materials", "Continuous tracking via GPS system", "Comprehensive cargo insurance"],
+                service4Title: "Customs Clearance",
+                service4Desc: "Facilitating all customs procedures to ensure speed and smooth completion of transactions and clearance of goods.",
+                service4Features: ["Fast and accurate customs clearance", "Specialized customs consultations", "Preparation and submission of documents", "Reduction of customs costs"],
                 service5Title: "Integrated Logistics Services",
-                service5Desc: "Integrated storage and distribution solutions to manage your supply chain.",
-                service5Features: ["Secure and air-conditioned storage", "Inventory management and distribution", "Professional packaging and packing", "Smart tracking and management system"],
+                service5Desc: "Integrated storage and distribution solutions to manage your supply chain with the highest quality standards.",
+                service5Features: ["Secure and air-conditioned storage", "Inventory management and distribution", "Professional packaging", "Smart tracking and management system"],
                 service6Title: "Special Cargo",
-                service6Desc: "Specialized solutions for shipments with special requirements and regulatory restrictions.",
+                service6Desc: "Specialized solutions for shipments with special requirements and regulatory restrictions with a team of experts.",
                 service6Features: ["Technical and sensitive shipments", "Hazardous materials shipping (IMO)", "Medical and pharmaceutical materials shipping", "Valuable materials and jewelry shipping"],
-                footerAboutTitle: "About Us",
-                footerAboutDesc: "Gulf Shipping Company has been providing integrated shipping and logistics solutions since 2005, with a wide coverage network in Gulf and Middle Eastern countries.",
+                
+                // Coverage Section
+                coverageTitle: "Coverage Area",
+                coverageSubtitle: "We provide shipping services to Gulf and Middle Eastern countries with a wide network of branches and partners",
+                coverageDescription: "We deliver your shipments to your favorite destinations throughout the Gulf and Middle East with ease and reliability.",
+                
+                // Contact Section
+                contactTitle: "Contact Us",
+                contactSubtitle: "We are here to help you with all your inquiries and logistics needs",
+                address: "Hawalli - Tunis Street - Nasser Al-Murabh Complex - 5th Floor - Office 13",
+                phone: "22612300",
+                fax: "51122285",
+                whatsapp: "66727775",
+                email: "info@gulfcargo.com",
+                
+                // Form
+                formNameLabel: "Full Name",
+                formEmailLabel: "Email Address",
+                formPhoneLabel: "Phone Number",
+                formServiceLabel: "Required Service Type",
+                formServiceOptionDefault: "Select Service",
+                formServiceOptionAir: "Air Freight",
+                formServiceOptionSea: "Sea Freight",
+                formServiceOptionLand: "Land Freight",
+                formServiceOptionCustoms: "Customs Clearance",
+                formMessageLabel: "Your Message / Request Details",
+                formSubmitBtn: "Submit Quote Request",
+                
+                // Footer
+                footerAboutTitle: "About Company",
+                footerAboutDesc: "Gulf Cargo Company has been providing integrated shipping and logistics solutions since 2005, with a wide coverage network in Gulf and Middle Eastern countries.",
                 footerServicesTitle: "Quick Services",
-                footerQuoteTitle: "Request a Quote",
-                footerQuoteDesc: "Request a free quote now to experience our distinguished services. Our team is ready to respond to your inquiries within 24 hours.",
-                copyrightText: "© 2023 Gulf Shipping Company. All rights reserved."
+                footerService1: "Urgent Air Freight",
+                footerService2: "Economical Sea Freight",
+                footerService3: "Cross-Border Land Transport",
+                footerService4: "Fast Customs Clearance",
+                footerService5: "Integrated Logistics Services",
+                footerLocationTitle: "Our Location",
+                footerAddress: "Hawalli - Tunis Street - Nasser Al-Murabh Complex - 5th Floor - Office 13",
+                footerHours: "Working Hours: 8:00 AM - 6:00 PM (Sunday - Thursday)",
+                footerEmail: "info@gulfcargo.com",
+                copyrightText: "© 2023 Gulf Cargo Company. All rights reserved. | GULF CARGO COMPANY"
             },
-            zh: {
-                dir: "ltr",
-                heroTitle: "海湾航运公司 - 综合航运解决方案",
-                heroDescription: "我们通过所有海、空和陆地方式提供集成、快速和安全的航运解决方案。我们以具有竞争力的成本轻松地将您的货物运送到您喜欢的目的地。",
-                ctaButton: "获取报价",
-                coverageTitle: "覆盖范围",
-                coverageDescription: "我们通过广泛的分支机构和合作伙伴网络向海湾和中东国家提供航运服务。",
-                servicesTitle: "我们的综合服务",
-                servicesDescription: "我们提供全面的物流航运服务以支持您的业务。",
-                service1Title: "海关分析",
-                service1Desc: "我们提供全面的服务以简化海关手续并快速有效地清关货物。",
-                service1Features: ["快速准确的海关清关", "专业海关咨询", "准备和提交所需文件", "降低海关成本"],
-                service2Title: "空运",
-                service2Desc: "通过全球网络确保及时到达的紧急货物快速解决方案。",
-                service2Features: ["24-48小时紧急运输", "实时货物跟踪", "温控运输", "专业危险品运输"],
-                service3Title: "海运",
-                service3Desc: "以经济成本通过全球港口运输各种类型的集装箱和货物。",
-                service3Features: ["整箱运输 (FCL)", "拼箱运输 (LCL)", "大型项目货物运输", "汽车和重型设备运输"],
-                service4Title: "陆运",
-                service4Desc: "现代化的卡车车队，高效安全地进行跨境陆路货物运输。",
-                service4Features: ["快速穿越海湾的陆路运输", "食品材料冷藏运输", "通过GPS系统持续跟踪", "全面的货物保险"],
-                service5Title: "综合物流服务",
-                service5Desc: "集成的存储和分销解决方案，以管理您的供应链。",
-                service5Features: ["安全和空调存储", "库存管理和分销", "专业包装", "智能跟踪和管理系统"],
-                service6Title: "特殊货物",
-                service6Desc: "针对具有特殊要求和监管限制的货物的专业解决方案。",
-                service6Features: ["技术和敏感货物运输", "危险材料运输 (IMO)", "医疗和药品材料运输", "贵重材料和珠宝运输"],
-                footerAboutTitle: "关于我们",
-                footerAboutDesc: "自2005年以来，海湾航运公司一直提供综合航运和物流解决方案，在海湾和中东国家拥有广泛的覆盖网络。",
-                footerServicesTitle: "快速服务",
-                footerQuoteTitle: "请求报价",
-                footerQuoteDesc: "立即请求免费报价，体验我们卓越的服务。我们的团队准备在24小时内回复您的询问。",
-                copyrightText: "© 2023 海湾航运公司。保留所有权利。"
+            de: {
+                // Navigation
+                navHome: "STARTSEITE",
+                navAbout: "ÜBER UNS",
+                navServices: "UNSERE DIENSTLEISTUNGEN",
+                navCoverage: "ABDECKUNG",
+                navContact: "KONTAKT",
+                
+                // Hero Section
+                heroTitle: "Gulf Cargo Company - Ihr vertrauenswürdiger Partner im Versand",
+                heroDescription: "Wir bieten integrierte, schnelle und sichere Versandlösungen über alle See-, Luft- und Landwege. Wir liefern Ihre Sendungen bequem und kostengünstig an Ihre Wunschziele.",
+                ctaButton: "Angebot einholen",
+                
+                // About Section
+                aboutTitle: "Über uns",
+                aboutSubtitle: "Qualität, Zuverlässigkeit und Engagement bei der Bereitstellung der besten Versanddienstleistungen",
+                aboutHeading: "Jenseits Des Gewöhnlichen - Ihre Logistik, Unsere Leidenschaft",
+                aboutDescription1: "Hier beginnt Ihre Reise mit Gulf Cargo Company. Lernen Sie unser Unternehmen und unsere Expertise in der Logistik kennen. Wir legen großen Wert auf Qualität und hervorragenden Service.",
+                aboutDescription2: "Begleiten Sie uns, während wir gemeinsam Ihre Ziele erreichen und Ihr Markenbewusstsein steigern. Wir freuen uns, dass Sie hier sind und Teil unserer Erfolgsgeschichte zu sein.",
+                feature1Title: "18+ Jahre Erfahrung",
+                feature1Desc: "Umfangreiche Erfahrung im Versand und Logistik",
+                feature2Title: "Globale Abdeckung",
+                feature2Desc: "Breites Netzwerk von Partnern weltweit",
+                feature3Title: "Sicherer Versand",
+                feature3Desc: "Garantie für sichere und geschützte Lieferung von Sendungen",
+                feature4Title: "24/7 Technischer Support",
+                feature4Desc: "Technisches Support-Team rund um die Uhr verfügbar",
+                
+                // Services Section
+                servicesTitle: "Unsere Dienstleistungen",
+                servicesSubtitle: "Wir bieten eine breite Palette integrierter Logistik-Versanddienstleistungen",
+                service1Title: "Luftfracht",
+                service1Desc: "Schnelle Lösungen für dringende Sendungen zur pünktlichen Lieferung durch ein globales Netzwerk von Partnerfluggesellschaften.",
+                service1Features: ["Dringender Versand in 24-48 Stunden", "Echtzeit-Sendungsverfolgung", "Temperaturkontrollierte Sendungen", "Spezialisierte Gefahrgutsendungen (IMO)"],
+                service2Title: "Seefracht",
+                service2Desc: "Transport von Containern und Waren aller Art über globale Häfen zu wirtschaftlichen Kosten und höchsten Sicherheitsstandards.",
+                service2Features: ["Vollcontainerladung (FCL)", "Teilladung (LCL)", "Große Projektgüterverschiffung", "Auto- und Schwergutversand"],
+                service3Title: "Landfracht",
+                service3Desc: "Moderne LKW-Flotte für grenzüberschreitenden Landfrachttransport mit Effizienz, Sicherheit und fortschrittlichen Trackingsystemen.",
+                service3Features: ["Schneller Landtransport im Golf", "Kühlversand für Lebensmittel", "Kontinuierliche Verfolgung via GPS-System", "Umfassende Frachtversicherung"],
+                service4Title: "Zollabfertigung",
+                service4Desc: "Erleichterung aller Zollverfahren für schnelle und reibungslose Abwicklung von Transaktionen und Abfertigung von Waren.",
+                service4Features: ["Schnelle und genaue Zollabfertigung", "Spezialisierte Zollberatung", "Vorbereitung und Einreichung von Dokumenten", "Reduzierung der Zollkosten"],
+                service5Title: "Integrierte Logistikdienstleistungen",
+                service5Desc: "Integrierte Lager- und Vertriebslösungen zur Verwaltung Ihrer Lieferkette mit höchsten Qualitätsstandards.",
+                service5Features: ["Sichere und klimatisierte Lagerung", "Bestandsverwaltung und -verteilung", "Professionelle Verpackung", "Intelligentes Tracking- und Managementsystem"],
+                service6Title: "Sonderfracht",
+                service6Desc: "Spezialisierte Lösungen für Sendungen mit besonderen Anforderungen und regulatorischen Beschränkungen mit einem Expertenteam.",
+                service6Features: ["Technische und empfindliche Sendungen", "Gefahrgutversand (IMO)", "Versand von medizinischen und pharmazeutischen Materialien", "Versand von wertvollen Materialien und Schmuck"],
+                
+                // Coverage Section
+                coverageTitle: "Abdeckungsbereich",
+                coverageSubtitle: "Wir bieten Versanddienstleistungen für Golf- und Nahostländer mit einem breiten Netzwerk von Niederlassungen und Partnern",
+                coverageDescription: "Wir liefern Ihre Sendungen mit Leichtigkeit und Zuverlässigkeit an Ihre Wunschziele im gesamten Golf und Nahen Osten.",
+                
+                // Contact Section
+                contactTitle: "Kontaktieren Sie uns",
+                contactSubtitle: "Wir sind hier, um Ihnen bei all Ihren Anfragen und logistischen Bedürfnissen zu helfen",
+                address: "Hawalli - Tunis Street - Nasser Al-Murabh Complex - 5. Stock - Büro 13",
+                phone: "22612300",
+                fax: "51122285",
+                whatsapp: "66727775",
+                email: "info@gulfcargo.com",
+                
+                // Form
+                formNameLabel: "Vollständiger Name",
+                formEmailLabel: "E-Mail-Adresse",
+                formPhoneLabel: "Telefonnummer",
+                formServiceLabel: "Gewünschter Dienstleistungstyp",
+                formServiceOptionDefault: "Dienstleistung auswählen",
+                formServiceOptionAir: "Luftfracht",
+                formServiceOptionSea: "Seefracht",
+                formServiceOptionLand: "Landfracht",
+                formServiceOptionCustoms: "Zollabfertigung",
+                formMessageLabel: "Ihre Nachricht / Anfragedetails",
+                formSubmitBtn: "Angebotsanfrage senden",
+                
+                // Footer
+                footerAboutTitle: "Über das Unternehmen",
+                footerAboutDesc: "Gulf Cargo Company bietet seit 2005 integrierte Versand- und Logistiklösungen mit einem breiten Abdeckungsnetzwerk in Golf- und Nahostländern.",
+                footerServicesTitle: "Schnelle Dienstleistungen",
+                footerService1: "Dringende Luftfracht",
+                footerService2: "Wirtschaftliche Seefracht",
+                footerService3: "Grenzüberschreitender Landtransport",
+                footerService4: "Schnelle Zollabfertigung",
+                footerService5: "Integrierte Logistikdienstleistungen",
+                footerLocationTitle: "Unser Standort",
+                footerAddress: "Hawalli - Tunis Street - Nasser Al-Murabh Complex - 5. Stock - Büro 13",
+                footerHours: "Arbeitszeiten: 8:00 - 18:00 Uhr (Sonntag - Donnerstag)",
+                footerEmail: "info@gulfcargo.com",
+                copyrightText: "© 2023 Gulf Cargo Company. Alle Rechte vorbehalten. | GULF CARGO COMPANY"
             }
         };
 
+        // Countries data
+        const countries = [
+            { name: "الإمارات العربية المتحدة", flag: "ae" },
+            { name: "قطر", flag: "qa" },
+            { name: "سلطنة عمان", flag: "om" },
+            { name: "سوريا", flag: "sy" },
+            { name: "العراق", flag: "iq" },
+            { name: "إيران", flag: "ir" },
+            { name: "البحرين", flag: "bh" },
+            { name: "الكويت", flag: "kw" },
+            { name: "المملكة العربية السعودية", flag: "sa" },
+            { name: "الأردن", flag: "jo" },
+            { name: "لبنان", flag: "lb" },
+            { name: "مصر", flag: "eg" }
+        ];
+
         // Current language
         let currentLang = 'ar';
+
+        // Initialize countries grid
+        function initCountriesGrid() {
+            const countriesGrid = document.querySelector('.countries-grid');
+            countriesGrid.innerHTML = '';
+            
+            countries.forEach(country => {
+                const countryItem = document.createElement('div');
+                countryItem.className = 'country-item';
+                countryItem.innerHTML = `
+                    <div class="country-flag">
+                        <img src="https://flagcdn.com/w40/${country.flag}.png" alt="${country.name} flag">
+                    </div>
+                    <div class="country-name">${country.name}</div>
+                `;
+                countriesGrid.appendChild(countryItem);
+            });
+        }
 
         // Switch language function
         function switchLanguage(lang) {
             currentLang = lang;
             
             // Update direction
-            document.body.dir = content[lang].dir;
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
             
             // Update buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -684,19 +1325,45 @@
             });
             event.target.classList.add('active');
             
+            // Update navigation
+            document.querySelector('nav a[href="#home"]').textContent = content[lang].navHome;
+            document.querySelector('nav a[href="#about"]').textContent = content[lang].navAbout;
+            document.querySelector('nav a[href="#services"]').textContent = content[lang].navServices;
+            document.querySelector('nav a[href="#coverage"]').textContent = content[lang].navCoverage;
+            document.querySelector('nav a[href="#contact"]').textContent = content[lang].navContact;
+            
             // Update all text elements
             for (const key in content[lang]) {
                 const element = document.getElementById(key);
                 if (element) {
-                    if (key.includes('Features')) {
+                    if (key.includes('Features') || key.includes('feature')) {
                         // Handle feature lists
-                        const features = content[lang][key];
-                        const featureElements = document.querySelectorAll(`[id^="${key.replace('Features', 'feature')}"]`);
-                        featureElements.forEach((el, index) => {
-                            if (features[index]) {
-                                el.textContent = features[index];
+                        if (key.includes('service')) {
+                            const serviceNum = key.match(/\d+/)[0];
+                            const featureType = key.includes('Features') ? 'Features' : 'feature';
+                            const features = content[lang][`service${serviceNum}${featureType}`];
+                            
+                            if (Array.isArray(features)) {
+                                const featureElements = document.querySelectorAll(`[id^="service${serviceNum}-feature"]`);
+                                featureElements.forEach((el, index) => {
+                                    if (features[index]) {
+                                        el.textContent = features[index];
+                                    }
+                                });
                             }
-                        });
+                        }
+                    } else if (key.includes('service') && key.includes('Title')) {
+                        // Service titles
+                        const serviceNum = key.match(/\d+/)[0];
+                        document.getElementById(`service${serviceNum}-title`).textContent = content[lang][key];
+                    } else if (key.includes('service') && key.includes('Desc')) {
+                        // Service descriptions
+                        const serviceNum = key.match(/\d+/)[0];
+                        document.getElementById(`service${serviceNum}-desc`).textContent = content[lang][key];
+                    } else if (key.includes('footer-service')) {
+                        // Footer services
+                        const serviceNum = key.match(/\d+/)[0];
+                        document.getElementById(`footer-service${serviceNum}`).textContent = content[lang][key];
                     } else {
                         element.textContent = content[lang][key];
                     }
@@ -704,15 +1371,53 @@
             }
             
             // Update logo text
-            document.querySelector('.logo h1').textContent = 
-                lang === 'ar' ? 'شركة الخليج للشحن' : 
-                lang === 'en' ? 'Gulf Shipping Company' : 
-                '海湾航运公司';
+            if (lang === 'ar') {
+                document.querySelector('.logo h1').textContent = 'شركة الخليج للشحن';
+            } else if (lang === 'en') {
+                document.querySelector('.logo h1').textContent = 'Gulf Cargo Company';
+            } else {
+                document.querySelector('.logo h1').textContent = 'Gulf Cargo Company';
+            }
         }
 
-        // Initialize with Arabic
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert(currentLang === 'ar' ? 'تم إرسال طلب عرض السعر بنجاح! سيتصل بكم فريقنا خلال 24 ساعة.' : 
+                  currentLang === 'en' ? 'Quote request submitted successfully! Our team will contact you within 24 hours.' :
+                  'Angebotsanfrage erfolgreich übermittelt! Unser Team wird sich innerhalb von 24 Stunden bei Ihnen melden.');
+            this.reset();
+        });
+
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
+            initCountriesGrid();
             switchLanguage('ar');
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Scroll to target
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
