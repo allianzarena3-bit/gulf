@@ -1747,18 +1747,50 @@ body[dir="ltr"] .whatsapp-float .whatsapp-text {
             initCountriesGrid();
         }
 
-        // Form submission
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const messages = {
-                ar: 'تم إرسال طلب عرض السعر بنجاح! سيتصل بكم فريقنا خلال 24 ساعة.',
-                en: 'Quote request submitted successfully! Our team will contact you within 24 hours.',
-                zh: '报价请求已成功提交！我们的团队将在24小时内与您联系。'
-            };
-            alert(messages[currentLang]);
-            this.reset();
-        });
-
+       // Form submission - UPDATED to work with email
+document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // جمع بيانات النموذج
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+    
+    // إعداد محتوى البريد الإلكتروني
+    const emailSubject = encodeURIComponent(`طلب استفسار جديد - ${service} - ${name}`);
+    const emailBody = encodeURIComponent(`
+        اسم العميل: ${name}
+        البريد الإلكتروني: ${email}
+        رقم الهاتف: ${phone}
+        الخدمة المطلوبة: ${service}
+        
+        الرسالة:
+        ${message}
+        
+        ---
+        تم الإرسال من موقع شركة الخليج للشحن
+        التاريخ: ${new Date().toLocaleDateString('ar-SA')}
+    `);
+    
+    // فتح عميل البريد الإلكتروني الافتراضي
+    window.location.href = `mailto:Gulf.cargo.ku@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    
+    // إظهار رسالة تأكيد
+    const messages = {
+        ar: 'تم إعداد طلب عرض السعر بنجاح! سيتم فتح تطبيق البريد الإلكتروني الخاص بك لإرسال الطلب إلى Gulf.cargo.ku@gmail.com',
+        en: 'Quote request prepared successfully! Your email client will open to send the request to Gulf.cargo.ku@gmail.com',
+        zh: '报价请求已成功准备！您的电子邮件客户端将打开以将请求发送至 Gulf.cargo.ku@gmail.com'
+    };
+    
+    alert(messages[currentLang]);
+    
+    // إعادة تعيين النموذج بعد تأخير بسيط
+    setTimeout(() => {
+        this.reset();
+    }, 1000);
+});
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
