@@ -731,7 +731,159 @@ body[dir="ltr"] .whatsapp-float .whatsapp-text {
         right: auto;
         left: 20px;
     }
+/* Map Styles */
+.map-container {
+    margin-top: 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
 
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(20%);
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 350px;
+}
+
+.map-info-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-info-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.map-info-content h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.map-info-content p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gradient-1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.directions-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.map-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--light);
+    border-radius: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.legend-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.legend-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.legend-text h5 {
+    color: var(--primary);
+    margin-bottom: 4px;
+    font-size: 1rem;
+}
+
+.legend-text p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+body[dir="ltr"] .map-overlay {
+    right: auto;
+    left: 20px;
+}
+
+@media (max-width: 768px) {
+    .map-wrapper {
+        height: 350px;
+    }
+    
+    .map-overlay {
+        position: relative;
+        top: 0;
+        right: 0;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .map-legend {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
     .whatsapp-float:hover {
         width: 250px;
     }
@@ -1321,7 +1473,77 @@ body[dir="ltr"] .whatsapp-float .whatsapp-text {
             </div>
         </section>
     </div>
-
+<!-- Map Section -->
+<div class="section animate-on-scroll" id="map">
+    <div class="section-header">
+        <span class="section-badge" id="mapBadge">موقعنا</span>
+        <h2 class="section-title" id="mapTitle">خريطة الموقع</h2>
+        <p class="section-subtitle" id="mapSubtitle">يمكنك زيارتنا في مقرنا الرئيسي أو التواصل معنا عبر الهاتف</p>
+    </div>
+    
+    <div class="map-container">
+        <div class="map-wrapper">
+            <!-- Google Map Embed -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.074234026232!2d48.00366431509871!3d29.334238182041368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9c83b5d5c1e5%3A0x6c5b5f5e5e5e5e5e!2sTunis%20St%2C%20Hawalli%2C%20Kuwait!5e0!3m2!1sen!2skw!4v1633024000000!5m2!1sen!2skw" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                title="موقع شركة الخليج للشحن في حولي - الكويت">
+            </iframe>
+            
+            <div class="map-overlay">
+                <div class="map-info-card">
+                    <div class="map-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="map-info-content">
+                        <h4 id="mapAddressTitle">العنوان التفصيلي</h4>
+                        <p id="mapAddressDetails">حولي - شارع تونس - مجمع ناصر المربع<br>الطابق الخامس - مكتب 13</p>
+                        <div class="map-directions">
+                            <a href="https://maps.google.com/maps?daddr=29.334238,48.005853" target="_blank" class="directions-btn">
+                                <i class="fas fa-directions"></i>
+                                <span id="directionsText">احصل على اتجاهات</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="map-legend">
+        <div class="legend-item">
+            <div class="legend-icon" style="background: var(--secondary);">
+                <i class="fas fa-car"></i>
+            </div>
+            <div class="legend-text">
+                <h5 id="parkingTitle">مواقف سيارات مجانية</h5>
+                <p id="parkingDesc">مواقف واسعة متاحة أمام المبنى</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon" style="background: var(--success);">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="legend-text">
+                <h5 id="hoursTitle">ساعات العمل</h5>
+                <p id="hoursDesc">الأحد - الخميس: 8:00 ص - 6:00 م</p>
+            </div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon" style="background: var(--accent);">
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="legend-text">
+                <h5 id="callTitle">اتصل قبل الزيارة</h5>
+                <p id="callDesc">+965 22612300</p>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Footer -->
     <footer>
         <div class="footer-container">
